@@ -5,7 +5,7 @@ app = Flask(__name__)
 app.secret_key = 'your_secret_key'  # Change this to something more secure for production
 
 # MongoDB connection
-client = MongoClient("mongodb+srv://jayavardhana29:123@cluster0.tr7awum.mongodb.net/")
+client = MongoClient("")
 db = client['complaint_portal']  # Your database name
 users_collection = db['users']  # Collection for storing user data
 complaints_collection = db['complaints']  # Collection for storing complaints
@@ -145,3 +145,4 @@ def logout():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
