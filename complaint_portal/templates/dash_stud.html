@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <h2>Student Dashboard</h2>
+    <p>Welcome, {{ user.email }}</p>
+
+    <a href="{{ url_for('apply_complaint') }}">Register Complaint</a>
+
+    <h3>Your Complaints</h3>
+    <table>
+        <tr>
+            <th>Department</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>Solution</th>
+        </tr>
+        {% for complaint in complaints %}
+        <tr>
+            <td>{{ complaint.department }}</td>
+            <td>{{ complaint.description }}</td>
+            <td>{{ complaint.status }}</td>
+            <td>{{ complaint.solution }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

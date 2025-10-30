@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <h2>Admin Dashboard</h2>
+    <a href="{{ url_for('view_complaints') }}">View All Complaints</a>
+
+    <h3>Recent Complaints</h3>
+    <table>
+        <tr>
+            <th>User ID</th>
+            <th>Department</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>Solution</th>
+        </tr>
+        {% for complaint in complaints %}
+        <tr>
+            <td>{{ complaint.user_id }}</td>
+            <td>{{ complaint.department }}</td>
+            <td>{{ complaint.description }}</td>
+            <td>{{ complaint.status }}</td>
+            <td>{{ complaint.solution }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

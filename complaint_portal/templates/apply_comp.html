@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <h2>Register Complaint</h2>
+    <form method="POST">
+        <label for="department">Department:</label>
+        <select name="department" id="department" required>
+            <option value="Cleaning">Cleaning</option>
+            <option value="Security">Security</option>
+            <option value="Faculty">Faculty</option>
+            <option value="Other">Other</option>
+        </select>
+
+        <label for="description">Description:</label>
+        <textarea name="description" id="description" required></textarea>
+
+        <button type="submit">Submit</button>
+    </form>
+</div>
+{% endblock %}
